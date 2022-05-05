@@ -28,7 +28,7 @@ Pour ce projet vous aurez besoin de plusieurs chose:
 
 ![Schéma de l'infrastructure](https://zupimages.net/up/22/18/3kmj.png)  
 
-![Repertoire de travail](https://zupimages.net/up/22/18/bacj.jpeg)  
+![Repertoire de travail](https://zupimages.net/up/22/18/qjat.png)  
 
 ![Détail du répertoire](https://zupimages.net/up/22/18/1xsa.png)
 
