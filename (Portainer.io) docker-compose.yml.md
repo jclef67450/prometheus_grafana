@@ -1,8 +1,8 @@
 # Docker-compose de portainer.io  # 
 Avec ce docker-compose, portainer sera accessible sur https://localhost:9443  
-Pensez bien à placer vos certificat SSL dans le repertoire mapper, ou alors changer le chemin dans le docker-compose.  
-Les options de commande permetent de dire au conteneur quel fichier utiliser comme certificat (.crt et .key).  
-Les volumes mapper doivent également être au bonne endroit .  
+Pensez bien à placer vos certificats SSL dans le répertoire mappé, ou alors changer le chemin dans le docker-compose.  
+Les options de commande permettent de dire au conteneur quel fichier utiliser comme certificat (.crt et .key).  
+Les volumes mappés doivent également être au bon endroit .  
 
 ```
 version: '2'
