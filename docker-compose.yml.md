@@ -2,27 +2,27 @@
 Avec ce docker-compose, vous aurez:
 1. Prometheus disponible sur https://localhost:9090
 2. Alertmanager disponible sur https://localhost:9093
-3. Node_exporter installer
+3. Node_exporter installé
 
 **Attention**  
-Les volumes qui sont mapper ainsi que les fichier et autre parametres doivent etre dans les repertoire cité dans le docker-compose.  
-Si vous chnager un fichier d'emplacement ou de chemin, il faut également le changer de le docker-compose.    
-Vous remarquerai que les conteneur sont en mode "host" cela veut dire qu'il vont utiliser la carte réseau de l'hote comme si c'étais leur carte propre, il seront donc accessible comme si le role etait en native sur linux.  
-L'option "user: root" présente sur prometheus et alertmanager permet d'etre en root dans le conteneur. Personelement, elle est désactiver.
+Les volumes qui sont mappés ainsi que les fichiers et autre parametres doivent être dans les répertoire cités dans le docker-compose.  
+Si vous chnagez un fichier d'emplacement ou de chemin, il faut également le changer dans le docker-compose.    
+Vous remarquerez que les conteneurs sont en mode "host" cela veut dire qu'ils vont utiliser la carte réseau de l'hote comme si c'étais leur carte propre, ils seront donc accessibles comme si le rôle était en native sur linux.  
+L'option "user: root" présente sur prometheus et alertmanager permet d'être en root dans le conteneur. Personnellement, elle est désactivée.
 
 ## Spécificité des rôles ##  
 ### Prometheus ###  
-J'ai mapper un volumes fixe de la machine pour ne pas perdre toute les données à chaque redémarrage.  
-Pour accéder en HTTPS à prometheus, il faut crée un fichier "web-config.yml" (également dans le projet GitHub) qui indique les chemin des certificat.  
-En plus de cela, il faut rentre les parametre de commande "--config.file=", et "--web.config.file=".  
-Les options "--storage.tsdb.retention.time=" et "--storage.tsdb.wal-compression" permetent d'étendre la rétention des données > 15j. **Faites attention, cela peut prendre beaucoup d'espace disque**.  
+J'ai mappé un volume fixe de la machine pour ne pas perdre toutes les données à chaque redémarrage.  
+Pour accéder en HTTPS à prometheus, il faut créer un fichier "web-config.yml" (également dans le projet GitHub) qui indique les chemins des certificats.  
+En plus de cela, il faut rentré les parametres de commande "--config.file=", et "--web.config.file=".  
+Les options "--storage.tsdb.retention.time=" et "--storage.tsdb.wal-compression" permet d'étendre la rétention des données > 15j. **Faites attentions, cela peut prendre beaucoup d'espaces disque**.  
 
 ### Node_exporter ###  
-Comme indiquer dans le fichier texte, rien de particulié sur ce rôle.  
+Comme indiquer dans le fichier texte, rien de particulier sur ce rôle.  
 
 ### Alertmanager ###  
-Comme pour prometheus, alertmanager a besoin d'un fichier "web-config.yml" pour l'accès en HTTPS et également les command de lancement.  
-Dans mon cas, je vais utiliser un serveur SMTP sans SSL/TLS, il faut donc rajouter les 2 variable d'nevironement dans le docker-compose.  
+Comme pour prometheus, alertmanager à besoin d'un fichier "web-config.yml" pour l'accès en HTTPS et également les commandes de lancement.  
+Dans mon cas, je vais utiliser un serveur SMTP sans SSL/TLS, il faut donc rajouter les 2 variable d'environement dans le docker-compose.  
 
 ### Le fameux docker-compose ###
 ```
