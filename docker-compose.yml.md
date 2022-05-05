@@ -12,9 +12,17 @@ L'option "user: root" présente sur prometheus et alertmanager permet d'etre en 
 
 ## Spécificité des rôles ##  
 ### Prometheus ###  
+J'ai mapper un volumes fixe de la machine pour ne pas perdre toute les données à chaque redémarrage.  
 Pour accéder en HTTPS à prometheus, il faut crée un fichier "web-config.yml" (également dans le projet GitHub) qui indique les chemin des certificat.  
 En plus de cela, il faut rentre les parametre de commande "--config.file=", et "--web.config.file=".  
-Les options "--storage.tsdb.retention.time=" et "--storage.tsdb.wal-compression" permetent d'étendre la rétention des données > 15j. **Faites attention, cela peut prendre beaucoup d'espace disque**.
+Les options "--storage.tsdb.retention.time=" et "--storage.tsdb.wal-compression" permetent d'étendre la rétention des données > 15j. **Faites attention, cela peut prendre beaucoup d'espace disque**.  
+
+### Node_exporter ###  
+Comme indiquer dans le fichier texte, rien de particulié sur ce rôle.  
+
+### Alertmanager ###  
+Comme pour prometheus, alertmanager a besoin d'un fichier "web-config.yml" pour l'accès en HTTPS et également les command de lancement.
+Dans mon cas, je vais utiliser un serveur SMTP sans SSL/TLS, il faut donc rajouter les 2 variable d'nevironement dans le docker-compose.  
 
 ### Le fameux docker-compose ###
 ```
