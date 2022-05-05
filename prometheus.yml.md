@@ -1,11 +1,11 @@
 # Fichier de configuration de prometheus #  
 1. On indique le chemin de fichier de règles avec l'option "rule_files:".
 2. On initialise la liaison alertmanager sur le port 9093.
-3. On créer les "job" d'instance à monitorer.  
+3. On crée les "jobs" d'instance à monitorer.  
 
-Vous pouvez constater que j'ai mis l'option de service sur les job, je trouve cela bien plus pratique pour la configuration d'alertmanager avec les routes et les match.  
+Vous pouvez constater que j'ai mis l'option de service sur les jobs, je trouve cela bien plus pratique pour la configuration d'alertmanager avec les routes et les matchs.  
 
-Vous pouvez également voir comment indiquez les instance, la syntaxe est comme ceci:  
+Vous pouvez également voir comment indiquer les instances, la syntaxe est comme ceci:  
 `['machine1:9100', machine2:9100']`  
 
 ```
