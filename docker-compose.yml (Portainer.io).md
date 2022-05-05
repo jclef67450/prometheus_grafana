@@ -5,7 +5,6 @@ Les options de commande permetent de dire au conteneur quel fichier utiliser com
 Les volumes mapper doivent également être au bonne endroit .  
 
 ```
-    
 version: '2'
 
 services:
@@ -31,5 +30,4 @@ services:
 
 volumes:
   portainer_data:
-    
 ```
