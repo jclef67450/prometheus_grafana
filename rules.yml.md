@@ -1,4 +1,4 @@
-# Fichier de configuration des règles d'alert prometheus #  
+# Fichier de configuration des règles d'alerte prometheus #  
 Rien de particulier à dire ici, j'ai créé les alertes qui me semble essentielles à un monitoring PRO.  
 Vous pouvez bien sûr crée vos règles personalisées.
 ```
