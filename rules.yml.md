@@ -1,6 +1,6 @@
 # Fichier de configuration des règles d'alert prometheus #  
-Rien de particulié à dire ici, j'ai crée les alertes qui me semble essentiel à un monitoring PRO.  
-Vous pouvez biensur crée vos règles personalisé.
+Rien de particulier à dire ici, j'ai créé les alertes qui me semble essentielles à un monitoring PRO.  
+Vous pouvez bien sûr crée vos règles personalisées.
 ```
 groups:
 ##########################################################################
