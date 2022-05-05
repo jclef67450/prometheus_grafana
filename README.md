@@ -1,6 +1,4 @@
 # **Monitoring Via Prometheus, Node_exporter, Grafana sous Docker** #  
-## *Projet en cour de dévelopement* ##  
-### *De potentiel fichier ne sont pas encore disponible.* ###  
 ## Pour des raison de sécurité, je cacherais les nom de machine et/ou adresse IP, car le projet à été rélaiser dans un cadre pro ##
 Bonjour,  
 Je vais vous montrer dans ce projet, comment crée un monitoring complet sous prometheus.  
