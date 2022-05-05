@@ -21,7 +21,7 @@ Les options "--storage.tsdb.retention.time=" et "--storage.tsdb.wal-compression"
 Comme indiquer dans le fichier texte, rien de particulié sur ce rôle.  
 
 ### Alertmanager ###  
-Comme pour prometheus, alertmanager a besoin d'un fichier "web-config.yml" pour l'accès en HTTPS et également les command de lancement.
+Comme pour prometheus, alertmanager a besoin d'un fichier "web-config.yml" pour l'accès en HTTPS et également les command de lancement.  
 Dans mon cas, je vais utiliser un serveur SMTP sans SSL/TLS, il faut donc rajouter les 2 variable d'nevironement dans le docker-compose.  
 
 ### Le fameux docker-compose ###
