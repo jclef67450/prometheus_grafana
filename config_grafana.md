@@ -1,11 +1,11 @@
 # Configuration de Grafana  
-Si vous faite comme moi, vous avez grafana en natif sur linux, le repertoire et donc `/etc/grafana`.  
-il y a 2 fichier à configurer:
+Si vous faites comme moi, vous avez grafana en natif sur linux, le répertoire et donc `/etc/grafana`.  
+il y a 2 fichiers à configurer:
 1. grafana.ini
 2. ldap.toml
 
 ## grafana.ini  ##
-Chercher la section "Server", puis indiquez les parametre suivants :  
+Chercher la section "Server", puis indiquez les parametres suivants :  
 ```
 #################################### Server ####################################
 [server]
@@ -48,8 +48,8 @@ domain = XXXXXX.XXXX.FR
 cert_file = /etc/certificat/grafana/grafana.crt
 cert_key = /etc/certificat/grafana/grafana.key
 ```  
-Ensuite chercher la section "Database" est indiquez les élément suivants pour synchroniser votre BDD:  
-Je ne vous apprend rien, remplacer mes éléments par les votres.  
+Ensuite chercher la section "Database" et indiquez les éléments suivants pour synchroniser votre BDD:  
+Je ne vous apprends rien, remplacer mes éléments par les vôtres.  
 ```
 #################################### Database ####################################
 [database]
@@ -64,7 +64,7 @@ user = grafana
 # If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
 password = MonMotDePasse
 ```  
-Chrcher la section "Auth LDAP" et compléter la:  
+Chercher la section "Auth LDAP" et compléter là:  
 ```
 #################################### Auth LDAP ##########################
 [auth.ldap]
@@ -78,7 +78,7 @@ allow_sign_up = true
 ;active_sync_enabled = true
 ```
 ## ldap.toml  ##  
-Ce fichier va initialiser votre serveur LDAP, j'ai mit par défault les utilisateur en viewer, vous pouvez biensur le remplacer par n'importe quel role.  
+Ce fichier va initialiser votre serveur LDAP, j'ai mis par défaut les utilisateurs en viewer, vous pouvez bien sûr le remplacer par n'importe quel rôle.  
 ```
 # To troubleshoot and get more log info enable ldap debug logging in grafana.ini
 # [log]
