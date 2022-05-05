@@ -1,5 +1,5 @@
 # Fichier de configuration web-config.yml  
-Vous devez biensur changer le chemin si ce n'est pas le bon sur votre système.  
+Vous devez bien sûr changer le chemin si ce n'est pas le bon sur votre système.  
 ### Fichier de prometheus
 ```
 tls_server_config:
