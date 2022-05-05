@@ -1,4 +1,6 @@
 # **Monitoring Via Prometheus, Node_exporter, Grafana sous Docker** #  
+## *Projet en cour de dévelopement* ##  
+### *De potentiel fichier ne sont pas encore disponible.* ###  
 ## Pour des raison de sécurité, je cacherais les nom de machine et/ou adresse IP, car le projet à été rélaiser dans un cadre pro ##
 Bonjour,  
 Je vais vous montrer dans ce projet, comment crée un monitoring complet sous prometheus.  
@@ -13,9 +15,11 @@ Je vais vous montrer dans ce projet, comment crée un monitoring complet sous pr
 Pour ce projet vous aurez besoin de plusieurs chose:  
 * Un OS Linux  
 * Accès à internet
-* La possibilité de pouvoir communiquez avec plusieur machines sur votre réseaux
+* La possibilité de communiquez avec plusieur machines sur votre réseaux
 * Node_exporter installer sur les instances à monitorées
 * Docker et Docker-compose d'installer  
+* Une BDD MySql ou Postgre
+* AU CHOIX, Grafana en natif sur linux ou un docker grafana
 * OPTIONEL PhpMyAdmin
 
 **Détail des images qui vont suivre:**
@@ -71,7 +75,7 @@ le tous est facilité via portainer.io avec l'interface graphique.
 2. Vous pourrez visualiser les graphique de métrique de vos instance en direct, en somme, en moyenne etc.
 3. Vous pourrez vous connecter via un LDAP.
 
-### Portainer.io ###
+ ### Portainer.io ###
 1. Portainer sera accessible via le port 9443 en HTTPS
 2. Il vous permettra de gérer les volumes, images conteneurs et autres via l'interface graphique.
 3. Connexion via LDAP possible.  
@@ -108,7 +112,31 @@ Pour crée des Dashboard vous avez 3 solutions :
 
 Une foix votre methode choisie, cliquer sur le logo "+" à gauche et "Import".  
 1. Si vous utiliser un dashboard préfait, il faut indiquer le numéro de dashboard comme ceci, est cliquer sur load : 
-   ![Dashboard importé](https://zupimages.net/up/22/18/x881.png) 
+   ![Dashboard importé](https://zupimages.net/up/22/18/x881.png "Cliquer sur load quand le code est rentrer") 
 2. Si vous crée votre dashboard, cliquez sur "Upload JSON file".  
 
-Voila, vous pouvez mainteant lire vos données, ou modifier les dashboard à votre sauce.
+Voila, vous pouvez mainteant lire vos données, ou modifier les dashboard à votre sauce.  
+## Autres Infos utiles  
+1. J'ai créer des alias de commande docker pour se faciliter la taches, les voici, libre à vous de les utilisés : 
+```
+# Mes alias
+alias update='apt -y update && apt -y upgrade'
+# Exécuter le docker-compose du repertoire actuel
+alias dockercompose='docker-compose up -d'
+# Aller dans le repertoire de travail de docker
+alias cdd='cd /docker'
+# Stoper tous les docker du docker-compose
+alias dockerstop='docker-compose stop'
+# Redemarer tous les docker du docker-compose
+alias dockerrestart='docker-compose stop && docker-compose up -d'
+# Visualiser les port du par-feu ouvert
+alias ufwlist='ufw status numbered | grep v6'
+# Purger tous les  volumes, images et autre non utiliser (a utiliser avec les docker allumé)
+alias dockerpurge='docker system prune -a'
+```  
+2. Si vous avez trop d'alerte d'un coup, il se peut que alertmanager stop l'envoie de mail, ou les envoyes plus lentement.
+3. Prometheus garde nativement les données sur une periode de 15j, cela peut etre augmenter avec le parametre comme indiquer dans le docker-compose mais cela augmentera grandement l'espace disque nécéssaire.
+4. Le problème de rétention des données longues, peut etre résolu en installant "thanos", mais cela nécéssite un déploiement assez gros et long à installer / paramètrer.
+5. Vous pouvez biensur utiliser une 2 ème BDD dans grafana en plus de prometheus. J'ai moi meme une source Prometheus et une source InfluxDB sur le meme Grafana.
+6. Quand vous changer un fichier de configuration d'un services, il faut redémarer le conteneur. 
+7. Si un fichiers de configuration est fautou indique une erreur, le conteneur ne démarre pas ou va tenter de redémarrer en boucle. Vous pouvez regarder les log via portainer.
