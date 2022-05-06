@@ -16,7 +16,7 @@ Pour ce projet vous aurez besoin de plusieurs choses:
 * Docker et Docker-compose d'installer  
 * Une BDD MySql ou Postgre
 * AU CHOIX, Grafana en natif sur linux ou un docker grafana
-* OPTIONEL PhpMyAdmin
+* OPTIONNEL PhpMyAdmin
 
 **Détail des images qui vont suivre:**
 1. Schéma de l'infrastructure système
