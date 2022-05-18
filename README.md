@@ -1,5 +1,5 @@
 # **Monitoring Via Prometheus, Node_exporter, Grafana sous Docker** #  
-## Pour des raisons de sécurité, je cacherais les noms de machine et/ou adresse IP, car le projet à été rélaisé dans un cadre pro ##
+## Pour des raisons de sécurité, je cacherais les noms de machine et/ou adresse IP, car le projet à été réalisé dans un cadre pro ##
 ## **Information Importante** ##  
 1. J'ai réalisé ce projet sous linux (**Ubuntu / 20.04**)  
 2. J'ai utilisé des images docker de "**Bitnami**", ce sont donc des images dites "**non root**", vous l'aurez donc compris, quand vous serez dans le docker, vous n'aurez pas d'accès root.  
